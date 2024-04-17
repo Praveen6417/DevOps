@@ -1,8 +1,12 @@
 #!/bin/bash
 
-sum=$(($1+$1))
+echo "Enter value1 :"
+read value1
 
-echo "sum of $1 and $1 is : $sum"
+echo "Enter Value2 :"
+read value2
+
+echo "sum of value1 and value2 is : $(($value1+$value2))"
 
 sum1=$((1+2))
 
