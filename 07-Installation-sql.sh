@@ -2,7 +2,7 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
 then 
-    echo "Please run this script using root access."
+    echo "Please run this script using root access - Exit status $?"
     exit 1
 else
     echo "you are super user"
