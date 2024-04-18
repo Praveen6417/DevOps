@@ -1,5 +1,5 @@
 temp(){
-    echo "Hello, world
+    echo "Hello, world"
 }
 
 temp
