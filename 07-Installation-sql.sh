@@ -7,7 +7,7 @@ Validate(){
 
 if [ $USERID -ne 0 ]
 then 
-    echo "Please run this script using root access - Exit status $?"
+    echo "Please run this script using root access "
     exit 1
 else
     echo "you are super user"
