@@ -1,4 +1,7 @@
 USERID=$(id -u)
+timestamp=$(date +%F-%H-%M-%S)
+script-name=$(echo $0 | cut -d "." -f1)
+logfile=/tmp/$timestamp-$scriptname.log
 
 Validate(){
     if [ $1 -ne 0 ]
@@ -19,8 +22,8 @@ else
 fi
 
 
-dnf install mysql -y
+dnf install mysql -y 1>&2 >> $logfile
 Validate $? "MySQL" "Successfully Installed MySQL"
 
-dnf install git -y
+dnf install git -y 1>&2 >> $logfile
 Validate $? "Git" "Successfully Installed Git"
