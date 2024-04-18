@@ -5,6 +5,6 @@ read value
 
 while[$value lt 5]
 do 
-echo "Number : $value"
-((value++))
+    echo "Number : $value"
+    ((value++))
 done
