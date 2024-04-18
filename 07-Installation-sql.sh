@@ -15,4 +15,4 @@ fi
 
 
 dnf install mysql -y
-Validate $? "Installing MySQL"
+Validate $? "Successfully Installed MySQL"
