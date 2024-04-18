@@ -22,7 +22,7 @@ else
 fi
 
 
-dnf install mysql -y 1>&2 >> $logfile
+dnf install mysql -y &>> $logfile
 Validate $? "MySQL" "Successfully Installed MySQL"
 
 dnf install git -y 1>&2 >> $logfile
