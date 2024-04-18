@@ -25,5 +25,5 @@ fi
 dnf install mysql -y &>> $logfile
 Validate $? "MySQL" "Successfully Installed MySQL"
 
-dnf install gitt -y 1>&2 >> $logfile
+dnf install git -y 1>&2 >> $logfile
 Validate $? "Git" "Successfully Installed Git"
