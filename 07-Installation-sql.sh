@@ -1,6 +1,6 @@
 USERID=$(id -u)
 timestamp=$(date +%F-%H-%M-%S)
-script-name=$(echo $0 | cut -d "." -f1)
+script-name=$(echo "$0" | cut -d "." -f1)
 logfile=/tmp/$timestamp-$scriptname.log
 
 Validate(){
