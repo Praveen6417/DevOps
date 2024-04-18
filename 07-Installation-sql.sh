@@ -1,5 +1,10 @@
 USERID=$(id -u)
 
+Validate(){
+    echo "exit status: $1"
+    echo $2
+}
+
 if [ $USERID -ne 0 ]
 then 
     echo "Please run this script using root access - Exit status $?"
@@ -8,12 +13,6 @@ else
     echo "you are super user"
 fi
 
-if [ $? -ne 0 ]
-then 
-    echo "Installing MySQL....FAILURE - Exit status $?"
-    exit 1
-else
-    echo "Installing MySQL....SUCCESS"
-fi
 
 dnf install mysql -y
+Validate $? "Installing MySQL"
