@@ -1,3 +1,3 @@
-scriptname=$(echo $0)
+scriptname=$0
 
 echo $scriptname
