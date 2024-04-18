@@ -22,5 +22,5 @@ fi
 dnf install mysql -y
 Validate $? "MySQL" "Successfully Installed MySQL"
 
-dnf install git -y
+dnf install gitt -y
 Validate $? "Git" "Successfully Installed Git"
