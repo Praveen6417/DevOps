@@ -1,6 +1,19 @@
-if [ "$(id -u)" -ne 0 ]; then
-    echo "This script must be run as root" 2>&1
+USERID=$(id -u)
+
+if [ $USERID -ne 0 ]
+then 
+    echo "Please run this script using root access."
     exit 1
+else
+    echo "you are super user"
+fi
+
+if [ $? -ne 0 ]
+then 
+    echo "Installing MySQL....FAILURE - Exit status $?"
+    exit 1
+else
+    echo "Installing MySQL....SUCCESS"
 fi
 
 dnf install mysql -y
