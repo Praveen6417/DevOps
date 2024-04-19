@@ -1,7 +1,7 @@
 echo "Enter the value"
 read value
 
-if [ value -eq 10 ]
+if [[ value -eq 10 ]]
 then
     echo "Successful"
 else 
