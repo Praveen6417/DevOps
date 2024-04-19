@@ -35,6 +35,7 @@ do
     fi
 
     dnf install $i -y &>> $logfile
+    Validate $? $i "Successfully Installed $i"
 
     if [ $? -eq 0 ]
     then
