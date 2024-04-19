@@ -11,3 +11,10 @@ for i in {1..5}; do
     fi
     echo "Processing number $i"
 done
+
+for i in {1..5}; do
+    if [ $i -eq 3 ]; then
+        echo "Hii"
+    fi
+    echo "Processing number $i"
+done
