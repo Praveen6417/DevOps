@@ -7,7 +7,7 @@ Validate(){
     if [ $1 -ne 0 ]
     then
         echo "Installation of $2 is unsuccessful"
-        
+        exit 1
     else
         echo $3
     fi
@@ -31,7 +31,7 @@ do
     if [ $? -eq 0 ]
     then
         echo "$i is already installed ... Skipping"
-        
+        continue
     fi
 
     dnf install $i -y &>> $logfile
