@@ -6,6 +6,7 @@ then
     echo "Successful"
 else 
     echo "Unsuccessful"
+fi
 
 dnf install mysql 1>> log
 
