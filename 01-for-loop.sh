@@ -17,7 +17,13 @@ do
 
     dnf list installed $i &>> $logfile
 
-   # dnf install $i -y &>> $logfile
+    if [ $? -eq 0 ]
+    then
+        echo "$i is already installed ... Skipping"
+        continue
+    fi
+
+    dnf install $i -y &>> $logfile
 
     if [ $? -eq 0 ]
     then
