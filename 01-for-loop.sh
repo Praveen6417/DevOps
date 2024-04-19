@@ -3,7 +3,7 @@ timestamp=$(date +%F-%H-%M-%S)
 script_name=$(echo "$0" | cut -d "." -f1)
 logfile=/tmp/$timestamp-$script_name.log
 
-if[ $USERID -nq 0 ]
+if[ $USERID -ne 0 ]
 then
     echo "Install Packages using root access"
     exit 1
