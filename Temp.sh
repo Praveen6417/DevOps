@@ -8,6 +8,6 @@ else
     echo "Unsuccessful"
 fi
 
-dnf install mysql 1>> log
+dnf install mysql 1>> logfile
 
-dnf install dockerr 2>> log
+dnf install dockerr 2>> logfile
