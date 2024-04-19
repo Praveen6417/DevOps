@@ -31,7 +31,7 @@ do
     if [ $? -eq 0 ]
     then
         echo "$i is already installed ... Skipping"
-        continue
+        
     fi
 
     dnf install $i -y &>> $logfile
