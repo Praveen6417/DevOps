@@ -1,3 +1,12 @@
-scriptname=$(echo $0 | cut -d "." -f1)
+echo "Enter the value"
+read value
 
-echo $scriptname
+if [ value -eq 10 ]
+then
+    echo "Successful"
+else 
+    echo "Unsuccessful"
+
+dnf install mysql 1>> log
+
+dnf install dockerr 2>> log
