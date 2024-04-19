@@ -15,7 +15,9 @@ for i in $@
 do 
     echo "Attempting to install $i"
 
-    dnf install $i -y &>> $logfile
+    dnf list installed $i &>> $logfile
+
+   # dnf install $i -y &>> $logfile
 
     if [ $? -eq 0 ]
     then
