@@ -7,7 +7,6 @@ Validate(){
     if [ $1 -ne 0 ]
     then
         echo "Installation of $2 is unsuccessful"
-        exit 1
     else
         echo $3
     fi
@@ -26,7 +25,7 @@ do
     echo "Attempting to install $i"
 
     dnf list installed $i &>> $logfile
-    Validate $? $i "Successfully Installed $i"
+    Validate $? $i "Checking for $i"
 
     if [ $? -eq 0 ]
     then
