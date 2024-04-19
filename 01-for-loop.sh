@@ -26,11 +26,12 @@ do
     echo "Attempting to install $i"
 
     dnf list installed $i &>> $logfile
+    Validate $? $i "Successfully Installed $i"
 
     if [ $? -eq 0 ]
     then
         echo "$i is already installed ... Skipping"
-        
+        continue
     fi
 
     dnf install $i -y &>> $logfile
