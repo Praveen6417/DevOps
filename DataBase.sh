@@ -33,9 +33,20 @@ systemctl start mysqld &>> logfile
 Validate $? "MySQL-Server" "Starting of"
 
 mysql -h 54.226.116.134 -u root -p -e 'show databases;' &>>$logfile
-if[ $? -eq 0 ];then
-echo "$a password is already set/updated"
-exit 1
+
+# Validate if MySQL root password is already set or updated
+mysql -u root -p -e ";"  # Attempt to connect to MySQL
+
+if [ $? -eq 0 ]; then
+    echo "MySQL root password is already set or updated."
+    exit 1
 else
-    echo mysql_secure_installation --set-root-pass ExpenseApp@1
-    Validate $? "MySQL-Server password" "Updated"
+    echo "Setting MySQL root password..."
+    mysql_secure_installation --set-root-pass -p
+    if [ $? -eq 0 ]; then
+        echo "MySQL root password set successfully."
+    else
+        echo "Failed to set MySQL root password."
+        exit 1
+    fi
+fi
