@@ -1,13 +1,3 @@
-echo "Enter the value"
-read value
+a=mysql
 
-if [[ value -eq 10 ]]
-then
-    echo "Successful"
-else 
-    echo "Unsuccessful"
-fi
-
-dnf install mysql 1> logfile
-
-dnf install dockerr 2>> logfile
+echo "Installing $a"
