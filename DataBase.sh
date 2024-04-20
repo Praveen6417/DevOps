@@ -33,7 +33,7 @@ systemctl start mysqld &>> logfile
 Validate $? "MySQL-Server" "Starting of"
 
 mysql -h 54.226.116.134 -u root -p -e 'show databases;' &>>$logfile
-if[ $? -eq 0];then
+if[ $? -eq 0 ];then
 echo "$a password is already set/updated"
 exit 1
 else
