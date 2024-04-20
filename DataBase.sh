@@ -42,7 +42,7 @@ if [ $? -eq 0 ]; then
     exit 1
 else
     echo "Setting MySQL root password..."
-    mysql_secure_installation --set-root-pass -p
+    mysql_secure_installation --set-root-pass ExpenseApp@1
     if [ $? -eq 0 ]; then
         echo "MySQL root password set successfully."
     else
