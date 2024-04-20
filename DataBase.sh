@@ -20,6 +20,7 @@ then
     exit 1
 else
     echo "You are Super User"
+    echo "Installing $a"
 fi
 
 dnf install mysql-server -y &>> logfile
@@ -31,4 +32,10 @@ Validate $? "MySQL-Server" "Enabling of"
 systemctl start mysqld &>> logfile
 Validate $? "MySQL-Server" "Starting of"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1
+mysql -h 54.226.116.134 -u root -p -e 'show databases;' &>>$logfile
+if[ $? -eq 0];then
+echo "$a password is already set/updated"
+exit 1
+else
+    echo mysql_secure_installation --set-root-pass ExpenseApp@1
+    Validate $? "MySQL-Server password" "Updated"
