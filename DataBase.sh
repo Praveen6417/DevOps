@@ -34,8 +34,6 @@ Validate $? "MySQL-Server" "Starting of"
 
 mysql -h 54.226.116.134 -u root -p -e 'show databases;' &>>$logfile
 
-# Validate if MySQL root password is already set or updated
-mysql -u root -p -e ";"  # Attempt to connect to MySQL
 
 if [ $? -eq 0 ]; then
     echo "MySQL root password is already set or updated."
