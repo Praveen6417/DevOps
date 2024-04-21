@@ -2,7 +2,7 @@ USERID=$(id -u)
 timestamp=$(date +%F-%H-%M-%S)
 script_name=$(echo "$0" | cut -d "." -f1)
 logfile=/tmp/$timestamp-$script_name.log
-a=Nginix
+a=Nginx
 
 Validate(){
     if [ $1 -ne 0 ]
@@ -24,17 +24,27 @@ else
 fi
 
 dnf install nginx -y &>> $logfile
-Validate $? "Nginix" "Insatllation of" 
+Validate $? "Nginx" "Insatllation of" 
 
 systemctl enable nginx -y &>> $logfile
-Validate $? "Nginix" "Enabling of"
+Validate $? "Nginx" "Enabling of"
 
 systemctl start nginx -y &>> $logfile
-Validate $? "Nginix" "Starting"
+Validate $? "Nginx" "Starting"
 
 rm -rf /usr/share/nginx/html/* $>> $logfile
 Validate $? "Removing existing content"
 
-curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip &>> $logfile
 Validate $? "Downloading Front End Code"
 
+cd /usr/share/nginx/html &>> $logfile
+unzip /tmp/frontend.zip &>> $logfile
+Validate $? "Extracting frontend code"
+
+#check your repo and path
+cp /home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>> $logfile
+Validate $? "Copied expense.conf"
+
+systemctl restart nginx &>> $logfile
+Validate $? "Restarting Nginx
