@@ -74,5 +74,5 @@ Validate $? "Installing MySQL Client"
 mysql -h  -uroot -p < /app/schema/backend.sql &>> $logfile
 Validate $? "Schema loading"
 
-systemctl restart backend &>> $logfile
+systemctl restart Backend &>> $logfile
 Validate $? "Restarting Backend"
