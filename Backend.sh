@@ -56,7 +56,7 @@ rm -rf /app/*
 unzip /tmp/backend.zip &>> $logfile
 Validate $? "Extracted backend code"
 
-cp /home/ec2-user/DevOps/backend.service /etc/systemd/system/backend.service &>> $logfile
+cp /home/ec2-user/DevOps/Backend.service /etc/systemd/system/Backend.service &>> $logfile
 Validate $? "Copied backend service"
 
 systemctl daemon-reload &>> $logfile
