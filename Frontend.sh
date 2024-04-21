@@ -8,7 +8,7 @@ Validate(){
     if [ $1 -ne 0 ]
     then
         echo "$3 $2 is unsuccessful"
-        exit1
+        exit 1
     else
         echo "$3 $2 is successful"
     fi
@@ -47,4 +47,4 @@ cp /home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &
 Validate $? "Copied expense.conf"
 
 systemctl restart nginx &>> $logfile
-Validate $? "Restarting Nginx
+Validate $? "Restarting Nginx"
