@@ -32,7 +32,7 @@ Validate $? "MySQL-Server" "Enabling of"
 systemctl start mysqld &>> logfile
 Validate $? "MySQL-Server" "Starting of"
 
-mysql -h 54.226.116.134 -u root -p -e 'show databases;' &>>$logfile
+mysql -h 54.204.65.63 -u root -p -e 'show databases;' &>>$logfile
 
 
 if [ $? -eq 0 ]; then
