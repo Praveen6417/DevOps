@@ -57,7 +57,7 @@ unzip /tmp/backend.zip &>> $logfile
 Validate $? "Extracted backend code"
 
 npm install &>> $logfile
-VALIDATE $? "Installing nodejs dependencies"
+Validate $? "Installing nodejs dependencies"
 
 cp /home/ec2-user/DevOps/Backend.service /etc/systemd/system/Backend.service &>> $logfile
 Validate $? "Copied backend service"
