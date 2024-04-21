@@ -62,10 +62,10 @@ Validate $? "Copied backend service"
 systemctl daemon-reload &>> $logfile
 Validate $? "Daemon Reload"
 
-systemctl start backend &>> $logfile
+systemctl start Backend &>> $logfile
 Validate $? "Starting backend"
 
-systemctl enable backend &>> $logfile
+systemctl enable Backend &>> $logfile
 Validate $? "Enabling backend"
 
 dnf install mysql -y &>> $logfile
