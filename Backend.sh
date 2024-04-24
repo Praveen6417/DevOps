@@ -39,6 +39,6 @@ systemctl enable Backend &>> $logfile
 
 dnf install mysql -y &>> $logfile
 
-mysql -h 172.31.25.139  -u root -p < /app/schema/backend.sql &>> $logfile
+mysql -h 172.31.27.12  -u root -p < /app/schema/backend.sql &>> $logfile
 
 systemctl restart Backend &>> $logfile
