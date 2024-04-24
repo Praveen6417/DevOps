@@ -18,11 +18,13 @@ Validate(){
     fi
 }
 
-if [ $USERID -ne 0 ]
-then
-    echo "Install $a using root access"
-    exit 1
-else
-    echo "You are Super User"
-    echo "Installing $a"
-fi
+check_root(){
+    if [ $USERID -ne 0 ]
+    then
+        echo "Install $a using root access"
+        exit 1
+    else
+        echo "You are Super User"
+        echo "Installing $a"
+    fi
+}
