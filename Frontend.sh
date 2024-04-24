@@ -1,4 +1,8 @@
-source common.sh
+source ./common.sh
+
+check_root
+
+trap 'error_handling ${LINENO} "$BASH_COMMAND"' ERR
 
 dnf install nginx -y &>> $logfile
 
