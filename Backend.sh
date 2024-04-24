@@ -1,4 +1,6 @@
-source ./commom.sh
+#!/bin/bash
+
+source ./common.sh
 
 dnf update -y &>> $logfile
 

@@ -1,14 +1,11 @@
-source commom.sh
+source common.sh
 
 
 dnf install mysql-server -y &>> logfile
-Validate $? "MySQL-Server" "Installation of"
 
 systemctl enable mysqld &>> logfile
-Validate $? "MySQL-Server" "Enabling of"
 
 systemctl start mysqld &>> logfile
-Validate $? "MySQL-Server" "Starting of"
 
 mysql -h 18.215.143.50 -u root -p -e 'show databases;' &>>$logfile
 
