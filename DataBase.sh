@@ -4,11 +4,11 @@ source ./common.sh
 
 check_root
 
-dnf install mysql-server -y &>> logfile
+dnf install mysql-server -y &>> $logfile
 
-systemctl enable mysqld &>> logfile
+systemctl enable mysqld &>> $logfile
 
-systemctl start mysqld &>> logfile
+systemctl start mysqld &>> $logfile
 
 mysql -h 35.173.249.245 -u root -p -e 'show databases;' &>> $logfile
 
