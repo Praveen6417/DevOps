@@ -4,13 +4,15 @@ source ./common.sh
 
 check_root
 
-dnf update -y &>> $logfile
+trap 'error_handling ${LINENO} "$BASH_COMMAND"' ERR
 
-dnf module disable nodejs -y &>> $logfile
+dnf update -y &>>$logfile
+
+dnf module disable nodejs -y &>>$logfile
 
 dnf module enable nodejs:20 -y &>> $logfile
 
-dnf install nodejs -y &>> $logfile
+dnf install nodejs -y &>> "$logfile"
 
 id expense &>> $logfile
 if [ $? -eq 0 ]

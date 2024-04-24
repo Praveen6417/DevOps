@@ -6,6 +6,10 @@ timestamp=$(date +%F-%H-%M-%S)
 script_name=$(echo "$0" | cut -d "." -f1)
 logfile=/tmp/$timestamp-$script_name.log
 
+error_handling() {
+    echo "An error occurred on line $1: $2"
+}
+
 Validate(){
     if [ $1 -ne 0 ]
     then
