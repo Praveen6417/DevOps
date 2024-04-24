@@ -1,5 +1,6 @@
-source common.sh
+#!/bin/bash
 
+source ./common.sh
 
 dnf install mysql-server -y &>> logfile
 
