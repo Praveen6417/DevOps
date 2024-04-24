@@ -1,4 +1,4 @@
-source commom.sh
+source ./commom.sh
 
 dnf update -y &>> $logfile
 
