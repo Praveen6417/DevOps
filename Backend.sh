@@ -2,6 +2,8 @@
 
 source ./common.sh
 
+check_root
+
 dnf update -y &>> $logfile
 
 dnf module disable nodejs -y &>> $logfile
