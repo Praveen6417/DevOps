@@ -13,7 +13,7 @@ systemctl start mysqld &>> logfile
 mysql -h 35.173.249.245 -u root -p -e 'show databases;' &>>$logfile
 
 
-if [ $? -eq 0 ]; then
+if [ $? -ne 0 ]; then
     echo "MySQL root password is already set or updated."
     exit 1
 else
