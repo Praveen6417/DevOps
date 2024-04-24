@@ -2,6 +2,8 @@
 
 source ./common.sh
 
+check_root
+
 dnf install mysql-server -y &>> logfile
 
 systemctl enable mysqld &>> logfile
