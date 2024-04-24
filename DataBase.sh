@@ -15,6 +15,7 @@ mysql -h 35.173.249.245 -u root -p -e 'show databases;' &>> $logfile
 
 if [ $? -eq 0 ]; then
     echo "MySQL root password is already set or updated."
+    exit 1
 else
     echo "Setting MySQL root password..."
     mysql_secure_installation --set-root-pass ExpenseApp@1
