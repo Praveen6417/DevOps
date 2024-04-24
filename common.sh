@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -e
 
 USERID=$(id -u)
 timestamp=$(date +%F-%H-%M-%S)
