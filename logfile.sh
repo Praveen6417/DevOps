@@ -10,7 +10,7 @@ else
     echo "logs directory created at $logfiles"
 fi
 
-find $logfiles -type f -name "*.log" -mtime +30 -exec rm {} \;
+find $logfiles -type f -name "*.log" -mtime +30 -exec rm -rf {} \;
 
 
 
