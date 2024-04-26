@@ -10,6 +10,6 @@ else
     echo "logs directory created at $logfiles"
 fi
 
-remove=$(find $logfiles -type f -name "*.log" -mtime +30)
+remove=$(find $logfiles -type f -name "*.log" -mtime +30 -exec ls -l {} \;)
 
 echo "$remove"
