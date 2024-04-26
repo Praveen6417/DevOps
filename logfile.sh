@@ -7,7 +7,7 @@ then
     echo "Logs directory is already created"
     exit 1
 else
-    mkdir logs
+    mkdir $logfiles
     echo "logs directory created at $logfiles"
 fi
 
