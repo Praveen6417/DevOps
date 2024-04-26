@@ -10,10 +10,11 @@ else
     echo "logs directory created at $logfiles"
 fi
 
-remove=$(find $logfiles -type f -name "*.log" -mtime +30 -exec ls -l {} \;)
+remove=$(find $logfiles -type f -name "*.log" -mtime +30 -exec rm {} \;)
 
 if [ $? -eq 0 ]; then
     echo "Command executed successfully"
 else
     echo "Command failed with exit status $?"
 fi
+
