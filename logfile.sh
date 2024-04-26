@@ -12,4 +12,8 @@ fi
 
 remove=$(find $logfiles -type f -name "*.log" -mtime +30 -exec ls -l {} \;)
 
-echo "$remove"
+if [ $? -eq 0 ]; then
+    echo "Command executed successfully"
+else
+    echo "Command failed with exit status $?"
+fi
