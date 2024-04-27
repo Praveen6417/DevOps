@@ -1,5 +1,6 @@
 Disk_usage=$(df -hT | grep xfs)
 Disk_max=75
+Message=""
 
 while IFS= read -r line
 do 
