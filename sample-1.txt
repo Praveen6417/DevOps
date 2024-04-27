@@ -1,2 +1,0 @@
-alice bob robert
-kat sam  dan
