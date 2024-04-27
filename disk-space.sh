@@ -6,4 +6,6 @@ do
 
 done <<< $Disk_usage
 
+echo "$usage"
+
 echo "Hii"
