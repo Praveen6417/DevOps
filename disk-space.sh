@@ -15,4 +15,4 @@ do
 done <<< $Disk_usage
 
 echo "Hii"
-echo "$usage"
+echo -e "$usage"
