@@ -1,6 +1,6 @@
 Disk_usage=$(df -hT | grep xfs)
 
-while IFS=read -r line
+while IFS= read -r line
 do 
     usage=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
 
