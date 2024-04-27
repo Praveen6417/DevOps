@@ -1,6 +1,5 @@
 Disk_usage=$(df -hT | grep xfs)
 Disk_max=75
-Message=""
 
 while IFS= read -r line
 do 
@@ -8,7 +7,7 @@ do
     folder=$(echo $line | awk -F " " '{print $NF}')
     if [ $usage -gt $Disk_max ]
     then
-        Message="Current usage :$usage"
+        Message="Current usage for $folder: $usage%"$'\n'
     fi
 
 done <<< $Disk_usage
