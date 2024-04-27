@@ -7,7 +7,7 @@ do
     folder=$(echo $line | awk -F " " '{print $NF}')
     if [ $usage -lt $Disk_max ]
     then
-        Message="Current usage for $folder: $usage%"$'\n'
+        Message+="Current usage for $folder: $usage%"$'\n'
     fi
 done <<< $Disk_usage
 
