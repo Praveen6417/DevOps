@@ -5,7 +5,7 @@ while IFS= read -r line
 do 
     usage=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
     folder=$(echo $line | awk -F " " '{print $NF}')
-    if [ usage -gt Disk_max ]
+    if [ $usage -gt $Disk_max ]
     then
         echo "$folder usage is more than $Disk_max, Current usage : $usage"
     else
