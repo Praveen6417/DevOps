@@ -7,8 +7,6 @@ do
     folder=$(echo $line | awk -F " " '{print $NF}')
     if [ $usage -gt $Disk_max ]
     then
-        echo ("$folder usage is more than $Disk_max, Current usage : $usage")
-    else
         Message="Current usage :$usage"
     fi
 
